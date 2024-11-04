@@ -16,3 +16,13 @@ class Solution:
 
 # Time complexity: O(n) b/c we're iterating through the entire list
 # Space complexity: O(k) where k is the size of the window
+
+# Brute force solution
+'''
+def closeDuplicatesBruteForce(nums, k):
+    for L in range(len(nums)):
+        for R in range(L + 1, min(len(nums), L + k)): # Window can be of size k or less
+            if nums[L] == nums[R]:
+                return True
+    return False
+'''
