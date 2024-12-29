@@ -13,7 +13,7 @@ class Solution:
         # noninclusive prefix sum array
         prefix = [0] * (n + 1)
         for i in range(n):
-            prefix[i+1] = prefix[i] + nums[i]
+            prefix[i+1] = prefix[i] + nums[i]   
         
         res = [-1] * n
         radius_size = 2 * k + 1 # k elements to the left, k elements to the right, and + 1 b/c its inclusive of i, this is basically a window
