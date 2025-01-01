@@ -27,7 +27,7 @@ def answer_queries(nums, queries, limit):
 
     return ans
 
-# thanks to prefic sum the algorithm goes from a O(n*m) tc in brute force to a O(n+m) tc
+# thanks to prefix sum the algorithm goes from a O(n*m) tc in brute force to a O(n+m) tc
 # prefix sum uses O(n) memory to construct the prefix sum array
 
 # mayb writing tests will actually land me a job
