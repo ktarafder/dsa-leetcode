@@ -1,23 +1,20 @@
-# from typing import List
-# from collections import defaultdict
+def sol(matches: List[int]) -> List[List[int]]:
+    # hashmap player: # losses 
+    counts = defaultdict(int)
+    for winner, loser in matches:
+        counts[winner] += 0
+        counts[loser] += 1
 
-# def sol(matches: List[int]) -> List[List[int]]:
-#     # hashmap player: # losses 
-#     counts = defaultdict(int)
-#     for winner, loser in matches:
-#         counts[winner] += 0
-#         counts[loser] += 1
+    undefeated, one_loss = [], []
+    for player in counts:
+        if counts[player] == 0:
+            undefeated.append(player)
+        elif counts[player] == 1:
+            one_loss.append(player)
+    return [sorted(undefeated), sorted(one_loss)]
 
-#     undefeated, one_loss = [], []
-#     for player in counts:
-#         if counts[player] == 0:
-#             undefeated.append(player)
-#         elif counts[player] == 1:
-#             one_loss.append(player)
-#     return [sorted(undefeated), sorted(one_loss)]
-
-# # time complexity O(n + mlogm) space complexity O(m) n is the number of matches and m is the number of unique players
-# print(sol([[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],[4,8],[4,9],[10,4],[10,9]]))
+# time complexity O(n + mlogm) space complexity O(m) n is the number of matches and m is the number of unique players
+print(sol([[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],[4,8],[4,9],[10,4],[10,9]]))
 
 '''
 Problem 1189. Maximum Number of Balloons
@@ -138,3 +135,18 @@ def cont_sub(nums: List[int]):
     return res
 
 print(cont_sub([0,1,0]))
+
+from collections import Counter
+
+def canConstruct(note, mag):
+    freqn, freqm, res = Counter(note), Counter(mag), 0
+    for char in freqm:
+        if char in freqn:
+            if freqn[char] > freqm[char]:
+                return False 
+            res += freqn[char]
+    return res == len(note)
+
+print(canConstruct("a", "b"))
+print(canConstruct("aa", "ab"))
+print(canConstruct("aa", "aab"))
