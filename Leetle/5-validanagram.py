@@ -29,3 +29,8 @@ def solve(s1: str, s2: str) -> bool:
     return counts1 == counts2
 
 print(solve("listen", "silent")) # True
+
+# Optimization
+'''
+add if len(s1) != len(s2): return False 
+'''
