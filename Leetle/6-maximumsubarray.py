@@ -13,8 +13,8 @@ So I wasted 5 minutes going down the sliding window approach
 Looked at this same problem on leetcode to better understand it and went extensively through the first test case to understand how we arrived at 6 (I should have done this from the beginning)
 Once I understood that I realized that there is prlly a dynamic programming approach to this, which when i googled I was right
 However I still don't know how the heck to implement dynamic programming, so I realized that imma just have to go down the brute force route 
-
 '''
+
 def solve(nums):
    res = nums[0] # set this to first element, not 0 b/c what if the first element is a negative number and the array contains all negative numbers if we return 0 then our answer is incorrect
    for i in range(len(nums)):
