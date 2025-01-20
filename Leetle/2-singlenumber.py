@@ -42,17 +42,17 @@ Claude's explanation
 
 The XOR operation (^) has these key properties:
 
-a ^ a = 0 (any number XOR with itself equals 0)
-a ^ 0 = a (any number XOR with 0 equals itself)
+a ^ a = 0 (any number XOR with itself equals 0) # makes sense b/c e.g. 6 in binary is 0110 if we perform 0110 ^ 0110 we get 0000
+a ^ 0 = a (any number XOR with 0 equals itself) 
 a ^ b ^ a = b (XOR is associative and the order doesn't matter)
 
 Dry run with [4,1,2,1,2]
 result = 0
-result ^= 4  # 0 ^ 4 = 4
-result ^= 1  # 4 ^ 1 = 5
-result ^= 2  # 5 ^ 2 = 7
-result ^= 1  # 7 ^ 1 = 6
-result ^= 2  # 6 ^ 2 = 4
+result ^= 4  # 0 ^ 4 = 4  0000 ^ 0100 = 0100
+result ^= 1  # 4 ^ 1 = 5  0100 ^ 0001 = 0101
+result ^= 2  # 5 ^ 2 = 7  0101 ^ 0010 = 0111
+result ^= 1  # 7 ^ 1 = 6  0111 ^ 0001 = 0110
+result ^= 2  # 6 ^ 2 = 4  0110 ^ 0010 = 0100
 
 Because all duplicates will XOR to 0, and 0 XOR with any number gives that number, 
 we're left with the single number that appears only once (4 in this case).

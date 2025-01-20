@@ -4,6 +4,8 @@ Write a function solve that finds the length of the longest consecutive sequence
 Example:
 Input: [100,4,200,1,3,2]
 Output: 4 
+
+Output is 4 b/c there exists 1,2,3,4 in array
 '''
 
 '''
