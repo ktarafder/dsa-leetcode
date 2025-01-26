@@ -5,7 +5,11 @@ Example:
 Input: 1 -> 2 -> 3 -> 4 -> 5
 Output: 5 -> 4 -> 3 -> 2 -> 1
 '''
-
+class ListNode:
+    def __init__(self, val=0):
+        self.val = val
+        self.next = None
+       
 def solve(head):
     curr = head
     prev = None
@@ -18,6 +22,13 @@ def solve(head):
 
     return prev
 
+LL = ListNode(1); LL.next = ListNode(2); LL.next.next = ListNode(3); LL.next.next.next = ListNode(4); LL.next.next.next.next = ListNode(5)
+reversed_head = solve(LL)
+
+curr = reversed_head
+while curr:
+    print(curr.val)
+    curr = curr.next
 '''
 prev = None
 curr = head = 1
